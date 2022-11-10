@@ -19,13 +19,7 @@ options {
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
 	dnssec-validation no;
-	listen-on port 53 {127.0.0.1; 193.191.177.129;};
-	// listen-on-v6 { any; };
+	listen-on-v6 port 53 { ::1; };
         recursion no;
-	listen-on {193.191.177.129;};
-	allow-transfer {none;};
 	
-	forwarders {
-	193.191.177.129;
-	};
 };

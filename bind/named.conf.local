@@ -9,9 +9,9 @@
 zone "ali-algburi.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/db.ali-algburi.sb.uclllabs.be";
+	allow-transfer { 193.191.176.254; 193.191.177.4; };
+	allow-query {any;};
+	also-notify { 193.191.176.254; 193.191.177.4; };
 };
 
-zone "177.191.193.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.177.191.193";
-};
+
