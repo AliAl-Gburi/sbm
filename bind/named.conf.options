@@ -18,14 +18,14 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
-	dnssec-validation auto;
+	dnssec-validation no;
 	listen-on port 53 {127.0.0.1; 193.191.177.129;};
 	// listen-on-v6 { any; };
         recursion no;
 	listen-on {193.191.177.129;};
 	allow-transfer {none;};
 	
-	//forwarders {
-	//193.191.177.129;
-	//};
+	forwarders {
+	193.191.177.129;
+	};
 };

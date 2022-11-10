@@ -6,3 +6,12 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+zone "ali-algburi.sb.uclllabs.be" {
+	type master;
+	file "/etc/bind/db.ali-algburi.sb.uclllabs.be";
+};
+
+zone "177.191.193.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.177.191.193";
+};
