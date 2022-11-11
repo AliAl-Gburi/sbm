@@ -15,3 +15,7 @@ zone "ali-algburi.sb.uclllabs.be" {
 };
 
 
+
+include "/etc/bind/named.conf.mrt";
+
+

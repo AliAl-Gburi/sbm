@@ -1,0 +1,9 @@
+
+zone "kad.ali-algburi.sb.uclllabs.be" {
+	type master; 
+	file "/etc/bind/db.kad.ali-algburi.sb.uclllabs.be";
+};
+zone "lad.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.lad.ali-algburi.sb.uclllabs.be";
+};
