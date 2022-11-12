@@ -1,1 +1,3 @@
 mrt/
+/etc/bind/named.conf.mrt
+/etc/bind/db.subzone*
