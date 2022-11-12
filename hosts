@@ -4,6 +4,10 @@
 193.191.177.129 ali-algburi.uclllabs.be ali-algburi
 ff02::1		ip6-allnodes
 ff02::2		ip6-allrouters
+
+193.191.177.129 www.ali-algburi.uclllabs.be
+193.191.177.129 www1.ali-algburi.uclllabs.be
+193.191.177.129 www1.ali-algburi.uclllabs.be
 # --- BEGIN PVE ---
 193.191.177.129 ali-algburi.uclllabs.be ali-algburi
 # --- END PVE ---

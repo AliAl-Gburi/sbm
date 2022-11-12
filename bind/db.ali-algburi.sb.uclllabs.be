@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
-			      9		; Serial
+			     11		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -16,4 +16,6 @@ $TTL	604800
 
 ns	IN	A	193.191.177.129
 www	IN	A	193.191.177.129
+www1	IN	A	193.191.177.129
+www2	IN	A	193.191.177.129
 test	IN	A	193.191.177.254
