@@ -1,6 +1,5 @@
 #!/bin/bash
-date=$(date '+%Y%m%d%H%M%S')
-sed -i "s/.*[0-9]\+.*;.*Serial/				$date ; Serial/g" tests
+date=$(date '+%Y%m%d%H')
 
 
 if [ $# -lt 3 ]
@@ -13,7 +12,7 @@ then
 if test -f "/etc/bind/db.$3"
 then
 echo "$1	IN	A	$2" >> /etc/bind/db."$3"
-sed -i "s/.*[0-9]\+.*;.*Serial/ 			$date ; Serial/g" /etc/bind/db."$3"
+sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db."$3"
 systemctl restart bind9
 exit 0
 else
@@ -28,7 +27,7 @@ then
 if test -f "/etc/bind/db.$5"
 then
 echo "$3	IN	A	$4" >> /etc/bind/db."$5"
-sed -i "s/.*[0-9]\+.*;.*Serial/ 			$date ; Serial/g" /etc/bind/db."$5"
+sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db."$5"
 systemctl restart bind9
 exit 0
 else
@@ -49,7 +48,7 @@ if test -f "/etc/bind/db.$5"
 then
 echo "$3	IN	A	$4" >> /etc/bind/db."$5"
 echo "@		IN	MX	10 $3.$5." >> /etc/bind/db."$5"
-sed -i "s/.*[0-9]\+.*;.*Serial/ 			$date ; Serial/g" /etc/bind/db."$5"
+sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db."$5"
 systemctl restart bind9
 exit 0
 else
@@ -67,7 +66,7 @@ then
 if test -f "/etc/bind/db.$4"
 then
 echo "$3	IN	CNAME	$4" >> /etc/bind/db."$4"
-sed -i "s/.*[0-9]\+.*;.*Serial/ 			$date ; Serial/g" /etc/bind/db."$5"
+sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db."$4"
 systemctl restart bind9
 else
 echo "zone $4 does not exist"
