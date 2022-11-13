@@ -28,7 +28,7 @@ echo "ns      IN      A       193.191.177.129" >> /etc/bind/db."$1".ali-algburi.
 
 echo "$1      IN      NS      ns.ali-algburi.sb.uclllabs.be." >> /etc/bind/db.ali-algburi.sb.uclllabs.be
 echo "$1	IN	A	193.191.177.129" >> /etc/bind/db.ali-algburi.sb.uclllabs.be
-sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db.ali-algburi.sb.uclllabs.be
+#sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db.ali-algburi.sb.uclllabs.be
 systemctl restart bind9
 fi
 else
