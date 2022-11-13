@@ -14,8 +14,13 @@ zone "ali-algburi.sb.uclllabs.be" {
 	also-notify { 193.191.176.254; 193.191.177.4; };
 };
 
+zone "us.ali-algburi.sb.uclllabs.be" {
+	type master;
+	file "/etc/bind/db.us.ali-algburi.sb.uclllabs.be";
+};
 
 
-include "/etc/bind/named.conf.mrt";
+
+//include "/etc/bind/named.conf.mrt";
 
 
