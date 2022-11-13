@@ -17,8 +17,16 @@
 :ufw-user-limit-accept - [0:0]
 ### RULES ###
 
-### tuple ### allow tcp 80 0.0.0.0/0 any 0.0.0.0/0 Apache - in
--A ufw-user-input -p tcp --dport 80 -j ACCEPT -m comment --comment 'dapp_Apache'
+### tuple ### allow any 80 0.0.0.0/0 any 172.65.32.248 in
+-A ufw-user-input -p tcp --dport 80 -s 172.65.32.248 -j ACCEPT
+-A ufw-user-input -p udp --dport 80 -s 172.65.32.248 -j ACCEPT
+
+### tuple ### allow any 443 0.0.0.0/0 any 172.65.32.248 in
+-A ufw-user-input -p tcp --dport 443 -s 172.65.32.248 -j ACCEPT
+-A ufw-user-input -p udp --dport 443 -s 172.65.32.248 -j ACCEPT
+
+### tuple ### allow tcp 80,443 0.0.0.0/0 any 0.0.0.0/0 Apache%20Full - in
+-A ufw-user-input -p tcp -m multiport --dports 80,443 -j ACCEPT -m comment --comment 'dapp_Apache%20Full'
 
 ### END RULES ###
 

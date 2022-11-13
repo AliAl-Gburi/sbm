@@ -17,8 +17,8 @@
 :ufw6-user-limit-accept - [0:0]
 ### RULES ###
 
-### tuple ### allow tcp 80 ::/0 any ::/0 Apache - in
--A ufw6-user-input -p tcp --dport 80 -j ACCEPT -m comment --comment 'dapp_Apache'
+### tuple ### allow tcp 80,443 ::/0 any ::/0 Apache%20Full - in
+-A ufw6-user-input -p tcp -m multiport --dports 80,443 -j ACCEPT -m comment --comment 'dapp_Apache%20Full'
 
 ### END RULES ###
 

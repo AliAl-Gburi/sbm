@@ -26,3 +26,5 @@ sbz1      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 sbz1	IN	A	193.191.177.129
 subzoneaiy9zu      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 subzoneaiy9zu	IN	A	193.191.177.129
+subzoneieh9qu      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneieh9qu	IN	A	193.191.177.129
