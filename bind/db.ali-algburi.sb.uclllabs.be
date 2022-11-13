@@ -38,3 +38,5 @@ subzonephos4e      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 subzonephos4e	IN	A	193.191.177.129
 subzoneia0aiv      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 subzoneia0aiv	IN	A	193.191.177.129
+subzoneeu9eut      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneeu9eut	IN	A	193.191.177.129
