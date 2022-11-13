@@ -11,3 +11,7 @@ zone "subzoneieh9qu.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzoneieh9qu.ali-algburi.sb.uclllabs.be";
 };
+zone "subzoneohph8o.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneohph8o.ali-algburi.sb.uclllabs.be";
+};
