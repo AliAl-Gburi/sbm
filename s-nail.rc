@@ -239,3 +239,7 @@ retain date sender from to cc subject message-id mail-followup-to reply-to
 #\endif
 
 # s-it-mode
+
+set folder=Maildir
+
+set record=+sent

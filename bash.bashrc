@@ -70,3 +70,5 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
 	}
 fi
 export MAIL=~/Maildir
+export MAIL=/var/vmail/${USER}/Maildir
+export MAIL=/var/vmail/$USER/Maildir
