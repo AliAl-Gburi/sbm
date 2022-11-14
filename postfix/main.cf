@@ -11,9 +11,9 @@ append_dot_mydomain = no
 
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
-mydestination = ali-algburi.localdomain, localhost.localdomain, localhost
+mydestination = ucll.be, *.ucll.be, *.uclllabs.be, localhost, localhost.localdomain
 relayhost = 
-mynetworks = 127.0.0.0/8 193.191.177.0/24
+mynetworks = 127.0.0.0/8
 inet_interfaces = all
 recipient_delimiter = +
 
@@ -29,3 +29,4 @@ virtual_mailbox_maps = hash:/etc/postfix/virtualmaps
 virtual_minimum_uid = 500
 virtual_uid_maps = static:2000
 virtual_gid_maps = static:2000
+myhostname = mx.ali-algburi.sb.uclllabs.be

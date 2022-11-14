@@ -22,3 +22,7 @@ zone "subzonezei6ae.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzonezei6ae.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonefe3iej.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonefe3iej.ali-algburi.sb.uclllabs.be";
+};
