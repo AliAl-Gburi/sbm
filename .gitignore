@@ -1,5 +1,5 @@
 mrt/
-/etc/bind/named.conf.mrt
-/etc/bind/db.subzone*
-/etc/apache2/sites-available/*.subzone*
+bind/named.conf.mrt
+bind/db.subzone*
+apache2/sites-available/*.subzone*
 
