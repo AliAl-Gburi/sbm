@@ -1,0 +1,70 @@
+#! /bin/bash
+if [[ $# != 1 ]]
+then
+echo "Please give a domain"
+exit 0
+fi
+IFS='.' read -r -a array <<< "$1"
+arrlenth=${#array[@]}
+
+if [[ $arrlenth -lt 5 ]]
+then
+echo "Sorry that domain already exists"
+exit 0
+fi
+
+if [[ $arrlenth -eq 5 ]]
+then
+	if test -f "/etc/apache2/sites-available/${array[0]}.conf"
+	then
+	echo "Sorry that domain already exists"
+	exit 0
+	else
+	touch /etc/apache2/sites-available/${array[0]}.conf
+	echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "ServerAdmin admin@localhost" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "ServerName $1" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "ServerAlias $1" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "DocumentRoot /var/www/${array[0]}/html" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "ErrorLog \${APACHE_LOG_DIR}/${array[0]}_error.log" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "CustomLog \${APACHE_LOG_DIR}/${array[0]}_access.log combined" >> /etc/apache2/sites-available/${array[0]}.conf
+	echo "</VirtualHost>" >> /etc/apache2/sites-available/${array[0]}.conf
+
+	mkdir /var/www/${array[0]}
+	mkdir /var/www/${array[0]}/html
+	touch /var/www/${array[0]}/html/index.html
+	echo "welcome ${array[0]}" >> /var/www/${array[0]}/html/index.html
+
+	a2ensite ${array[0]}.conf
+	systemctl restart apache2
+	exit 0
+	fi
+fi
+
+if [[ $arrlenth -eq 6 ]]
+then
+        if test -f "/etc/apache2/sites-available/${array[0]}.${array[1]}.conf"
+        then
+        echo "Sorry that domain already exists"
+        exit 0
+	else
+	touch /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "ServerAdmin admin@localhost" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "ServerName $1" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "ServerAlias $1" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "DocumentRoot /var/www/${array[0]}.${array[1]}/html" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "ErrorLog \${APACHE_LOG_DIR}/${array[0]}.${array[1]}_error.log" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+        echo "CustomLog \${APACHE_LOG_DIR}/${array[0]}.${array[1]}_access.log combined" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+	echo "</VirtualHost>" >> /etc/apache2/sites-available/${array[0]}.${array[1]}.conf
+
+	mkdir /var/www/${array[0]}.${array[1]}
+	mkdir /var/www/${array[0]}.${array[1]}/html
+        touch /var/www/${array[0]}.${array[1]}/html/index.html
+        echo "welcome ${array[0]}.${array[1]}" >> /var/www/${array[0]}.${array[1]}/html/index.html
+
+	a2ensite "${array[0]}"."${array[1]}".conf
+        systemctl restart apache2
+	exit 0
+        fi
+fi
