@@ -3,7 +3,7 @@
 ;
 $TTL	5
 @	IN	SOA	ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
-                   2147483656         ; Serial 
+                   2147483658         ; Serial 
 			      5		; Refresh
 			      5		; Retry
 			      5		; Expire
@@ -27,6 +27,8 @@ _acme-challenge.supersecure.ali-algburi.sb.uclllabs.be. IN	TXT	"4Jk0K2y28b2fn6p_
 us.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
 us.ali-algburi.sb.uclllabs.be.	IN	NS	ns.ali-algburi.sb.uclllabs.be.
 
+ali.algburi.sb.uclllabs.be.	IN	MX	10	mx.ali-algburi.sb.uclllabs.be.
+mx	IN	A	193.191.177.129	
 
 lemme.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 lemme.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
@@ -36,3 +38,5 @@ subzoneeem7va.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb
 subzoneeem7va.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
 subzoneifup6a.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 subzoneifup6a.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonezei6ae.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonezei6ae.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129

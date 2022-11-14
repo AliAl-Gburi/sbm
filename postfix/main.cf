@@ -23,3 +23,4 @@ myorigin = /etc/mailname
 mailbox_size_limit = 0
 inet_protocols = ipv4
 home_mailbox = Maildir/
+virtual_alias_maps = hash:/etc/postfix/virtual
