@@ -2,4 +2,5 @@ mrt/
 bind/named.conf.mrt
 bind/db.subzone*
 apache2/sites-available/*.subzone*
+apache2/sites-enabled/*.subzone*
 
