@@ -1,14 +1,14 @@
 ;
 ; BIND data file for local loopback interface
 ;
-$TTL	604800
-@	IN	SOA	ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
-                     2022111308 ;         Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
+$TTL    5
+@       IN      SOA     ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
+                              2         ; Serial
+                              5         ; Refresh
+                              5         ; Retry
+                              5         ; Expire
+                              5 )       ; Negative Cache TTL
 ;
-@	IN	NS	ns.ali-algburi.sb.uclllabs.be.
-ns	IN	A	193.191.177.129
+us.ali-algburi.sb.uclllabs.be.  IN      NS      ns.ali-algburi.sb.uclllabs.be.
+us.al-algburi.sb.uclllabs.be.  IN      A       193.191.177.129
 

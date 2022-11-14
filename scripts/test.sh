@@ -1,11 +1,10 @@
 #!/bin/bash
-if [ $# -gt 1 ] 
+se="$(grep Serial tests)"
+regex=".*([0-9]{10}).*;.*Serial.*"
+if [[ $se =~ $regex ]]
 then
-echo $#
+ll=$((${BASH_REMATCH[1]}+1))
+sed -i "s/.*[[:digit:]]\+.*;.*Serial.*/                   $((${BASH_REMATCH[1]}+1))         ; Serial /g" tests
 fi
-if test -f "/etc/bind/db.$1.ali-algburi.sb.uclllabs.be";
-then
-	echo "it exists"
-else
-	echo "not"
-fi
+#sed 's/.*[[:digit:]]\+.*;.*Serial.*/                   $ll         ; Serial /g' tests 
+

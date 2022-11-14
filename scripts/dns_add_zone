@@ -15,20 +15,27 @@ echo "};" >> /etc/bind/named.conf.mrt
 touch /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
 
 
-echo "\$TTL    604800" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "\$TTL    5" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
 echo "@       IN      SOA     ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "                              1         ; Serial " >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "                         604800         ; Refresh " >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "                          86400         ; Retry" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "                        2419200         ; Expire" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "                         604800 )       ; Negative Cache TTL" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "                     1000000000         ; Serial " >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "                              5         ; Refresh " >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "                              5         ; Retry" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "                              5         ; Expire" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "                              5 )       ; Negative Cache TTL" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
 echo ";" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "@       IN      NS      ns.ali-algburi.sb.uclllabs.be." >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
-echo "ns      IN      A       193.191.177.129" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "$1.ali-algburi.sb.uclllabs.be.       IN      NS      ns.ali-algburi.sb.uclllabs.be." >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
+echo "$1.ali-algburi.sb.uclllabs.be.      IN      A       193.191.177.129" >> /etc/bind/db."$1".ali-algburi.sb.uclllabs.be
 
-echo "$1      IN      NS      ns.ali-algburi.sb.uclllabs.be." >> /etc/bind/db.ali-algburi.sb.uclllabs.be
-echo "$1	IN	A	193.191.177.129" >> /etc/bind/db.ali-algburi.sb.uclllabs.be
-#sed -i "s/.*[0-9]\+.*;.*Serial/                     $date ;         Serial/g" /etc/bind/db.ali-algburi.sb.uclllabs.be
+echo "$1.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be." >> /etc/bind/db.ali-algburi.sb.uclllabs.be
+echo "$1.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129" >> /etc/bind/db.ali-algburi.sb.uclllabs.be
+
+se="$(grep Serial /etc/bind/db.ali-algburi.sb.uclllabs.be)"
+regex=".*([0-9]{10}).*;.*Serial.*"
+if [[ $se =~ $regex ]]
+then
+ll=$((${BASH_REMATCH[1]}+1))
+sed -i "s/.*[[:digit:]]\+.*;.*Serial.*/                   $((${BASH_REMATCH[1]}+1))         ; Serial /g" /etc/bind/db.ali-algburi.sb.uclllabs.be
+fi
 systemctl restart bind9
 fi
 else

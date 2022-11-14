@@ -21,6 +21,6 @@ zone "us.ali-algburi.sb.uclllabs.be" {
 
 
 
-//include "/etc/bind/named.conf.mrt";
+include "/etc/bind/named.conf.mrt";
 
 
