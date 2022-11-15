@@ -62,3 +62,4 @@ mysql:x:121:
 dovecot:x:122:
 dovenull:x:123:
 virtualmail:x:2000:
+vmail:x:2001:
