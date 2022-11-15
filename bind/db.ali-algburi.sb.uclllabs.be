@@ -3,7 +3,7 @@
 ;
 $TTL	5
 @	IN	SOA	ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
-                   2147483695         ; Serial 
+                   2147483696         ; Serial 
 			      5		; Refresh
 			      5		; Retry
 			      5		; Expire
@@ -23,6 +23,7 @@ secure	IN	A	193.191.177.129
 supersecure	IN	A	193.191.177.129
 _acme-challenge.secure.ali-algburi.sb.uclllabs.be.	IN	TXT	"LAleeMBIlWoX-0o9G_lokbKIfLKAYPvFUUiA6bQdWig"
 _acme-challenge.supersecure.ali-algburi.sb.uclllabs.be. IN	TXT	"4Jk0K2y28b2fn6p_q4zxVwW3C4YjvxSrqclt5U1mlxs"
+_acme-challenge.mx.ali-algburi.sb.uclllabs.be.	IN	TXT	"nqWQ6eQt51n-X1MEnvSG_Uo7rMaVkf1skkNvEW6l81E"
 
 us.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
 us.ali-algburi.sb.uclllabs.be.	IN	NS	ns.ali-algburi.sb.uclllabs.be.

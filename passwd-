@@ -33,3 +33,4 @@ virtualmail:x:2000:2000::/var/vmail:/bin/sh
 postfix:x:102:109::/var/spool/postfix:/usr/sbin/nologin
 dovecot:x:113:122:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
 dovenull:x:114:123:Dovecot login user,,,:/nonexistent:/usr/sbin/nologin
+vmail:x:5000:5000::/var/vmail:/bin/sh

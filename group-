@@ -62,3 +62,4 @@ postfix:x:109:
 postdrop:x:110:
 dovecot:x:122:
 dovenull:x:123:
+vmail:x:5000:
