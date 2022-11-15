@@ -12,8 +12,7 @@
 # Most (but not all) settings can be overridden by different protocols and/or
 # source/destination IPs by placing the settings inside sections, for example:
 # protocol imap { }, local 127.0.0.1 { }, remote 10.0.0.0/8 { }
-ssl = no
-disable_plaintext_auth = no
+
 # Default values are shown for each setting, it's not required to uncomment
 # those. These are exceptions to this though: No sections (e.g. namespace {})
 # or plugin settings are added by default, they're listed only as examples.
@@ -23,7 +22,7 @@ disable_plaintext_auth = no
 
 # Enable installed protocols
 !include_try /usr/share/dovecot/protocols.d/*.protocol
-protocols = imap lmtp
+
 # A comma separated list of IPs or hosts where to listen in for connections. 
 # "*" listens in all IPv4 interfaces, "::" listens in all IPv6 interfaces.
 # If you want to specify non-default ports or anything more complex,

@@ -16,7 +16,6 @@
 
 service imap-login {
   inet_listener imap {
-  port = 0
     #port = 143
   }
   inet_listener imaps {
@@ -53,10 +52,8 @@ service submission-login {
 }
 
 service lmtp {
-  unix_listener /var/spool/postfix/private/dovecot-lmtp {
-    mode = 0600
-    user = postfix
-    group = postfix
+  unix_listener lmtp {
+    #mode = 0666
   }
 
   # Create inet listener only if you can't use the above UNIX socket
@@ -100,15 +97,9 @@ service auth {
   # To give the caller full permissions to lookup all users, set the mode to
   # something else than 0666 and Dovecot lets the kernel enforce the
   # permissions (e.g. 0777 allows everyone full permissions).
-  unix_listener /var/spool/postfix/private/auth {
-  mode = 0666
-  user = postfix
-  group = postfix
-
-  }
   unix_listener auth-userdb {
-    mode = 0600
-    user = vmail
+    #mode = 0666
+    #user = 
     #group = 
   }
 
@@ -116,7 +107,7 @@ service auth {
   #unix_listener /var/spool/postfix/private/auth {
   #  mode = 0666
   #}
-user = dovecot
+
   # Auth process is run as this user.
   #user = $default_internal_user
 }
@@ -126,7 +117,6 @@ service auth-worker {
   # /etc/shadow. If this isn't necessary, the user should be changed to
   # $default_internal_user.
   #user = root
-user = vmail
 }
 
 service dict {

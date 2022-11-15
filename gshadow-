@@ -45,8 +45,6 @@ input:!::
 sgx:!::
 kvm:!::
 render:!::
-postfix:!::
-postdrop:!::
 _ssh:!::
 systemd-journal:!::
 systemd-network:!::
@@ -59,6 +57,8 @@ incron:!::
 ntp:!::
 bind:!::
 mysql:!::
+virtualmail:!::
+postfix:!::
+postdrop:!::
 dovecot:!::
 dovenull:!::
-virtualmail:!::

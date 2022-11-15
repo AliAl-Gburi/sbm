@@ -46,15 +46,15 @@ passdb {
 
 # System users (NSS, /etc/passwd, or similar). In many systems nowadays this
 # uses Name Service Switch, which is configured in /etc/nsswitch.conf.
-userdb {
+#userdb {
   # <doc/wiki/AuthDatabase.Passwd.txt>
-  driver = passwd
+#  driver = passwd
   # [blocking=no]
   #args = 
 
   # Override fields from passwd
   #override_fields = home=/home/virtual/%u
-}
+#}
 
 # Static settings generated from template <doc/wiki/UserDatabase.Static.txt>
 #userdb {
@@ -72,3 +72,13 @@ userdb {
   #
   #args =
 #}
+auth_verbose = yes
+auth_mechanisms = plain
+passdb {
+  driver = passwd-file
+  args = /etc/dovecot/passwd
+}
+userdb {
+  driver = static
+  args = uid=vmail gid=vmail home=/var/vmail/%u
+}

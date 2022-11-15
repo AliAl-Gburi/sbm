@@ -142,7 +142,3 @@
 
 # Query to get a list of all usernames.
 #iterate_query = SELECT username AS user FROM users
-driver = mysql
-connect = host=127.0.0.1 dbname=servermail user=um password=t
-default_pass_scheme = SHA512-CRYPT
-password_query = SELECT email as user, password FROM virtual_users WHERE email='%u';

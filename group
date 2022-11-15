@@ -45,8 +45,6 @@ input:x:105:
 sgx:x:106:
 kvm:x:107:
 render:x:108:
-postfix:x:109:
-postdrop:x:110:
 _ssh:x:111:
 systemd-journal:x:112:
 systemd-network:x:113:
@@ -59,7 +57,9 @@ incron:x:118:
 ntp:x:119:
 bind:x:120:
 mysql:x:121:
+virtualmail:x:2000:
+postfix:x:109:
+postdrop:x:110:
 dovecot:x:122:
 dovenull:x:123:
-virtualmail:x:2000:
-vmail:x:2001:
+vmail:x:5000:
