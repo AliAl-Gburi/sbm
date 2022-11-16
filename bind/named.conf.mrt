@@ -174,3 +174,51 @@ zone "subzonepah6ju.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzonepah6ju.ali-algburi.sb.uclllabs.be";
 };
+zone "subzoneaixa4m.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneaixa4m.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneach8fa.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneach8fa.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneietoo0.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneietoo0.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneoc4aer.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneoc4aer.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneiloh8c.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneiloh8c.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneul1oow.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneul1oow.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneahb0ie.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneahb0ie.ali-algburi.sb.uclllabs.be";
+};
+zone "subzonewoph7k.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonewoph7k.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneahvie1.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneahvie1.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneteil9u.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneteil9u.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneein7ne.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneein7ne.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneyu3iey.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneyu3iey.ali-algburi.sb.uclllabs.be";
+};
