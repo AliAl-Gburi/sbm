@@ -170,3 +170,7 @@ zone "subzonerab7qu.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzonerab7qu.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonepah6ju.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonepah6ju.ali-algburi.sb.uclllabs.be";
+};
