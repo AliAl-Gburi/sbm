@@ -166,3 +166,7 @@ zone "subzonekoo9ch.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzonekoo9ch.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonerab7qu.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonerab7qu.ali-algburi.sb.uclllabs.be";
+};
