@@ -302,3 +302,7 @@ zone "subzoneesit1i.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzoneesit1i.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonetai4ei.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonetai4ei.ali-algburi.sb.uclllabs.be";
+};
