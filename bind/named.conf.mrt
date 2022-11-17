@@ -306,3 +306,19 @@ zone "subzonetai4ei.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzonetai4ei.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonejaec9j.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonejaec9j.ali-algburi.sb.uclllabs.be";
+};
+zone "subzonesee6ah.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonesee6ah.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneiel5ep.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneiel5ep.ali-algburi.sb.uclllabs.be";
+};
+zone "subzoneeex7la.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneeex7la.ali-algburi.sb.uclllabs.be";
+};

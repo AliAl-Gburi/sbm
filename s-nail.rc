@@ -240,6 +240,6 @@ retain date sender from to cc subject message-id mail-followup-to reply-to
 
 # s-it-mode
 
-set folder=/var/vmail
+set folder=Maildir
 
 set record=+sent
