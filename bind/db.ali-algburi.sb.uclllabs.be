@@ -3,7 +3,7 @@
 ;
 $TTL	5
 @	IN	SOA	ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
-                   2147483736         ; Serial 
+                   2147483762         ; Serial 
 			      5		; Refresh
 			      5		; Retry
 			      5		; Expire
@@ -192,3 +192,55 @@ subzoneiel5ep.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb
 subzoneiel5ep.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
 subzoneeex7la.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 subzoneeex7la.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonevohz8r.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonevohz8r.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneaere6f.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneaere6f.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneshaex1.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneshaex1.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneeaw8ae.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneeaw8ae.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneaeph5o.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneaeph5o.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneowi0ai.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneowi0ai.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonetoob4a.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonetoob4a.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonefu8az7.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonefu8az7.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneoo5fed.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneoo5fed.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonekae1co.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonekae1co.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonebohma6.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonebohma6.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneyua1oe.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneyua1oe.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneeech8f.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneeech8f.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneue3oyi.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneue3oyi.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneishec5.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneishec5.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneai2ohm.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneai2ohm.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneowe8ra.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneowe8ra.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonekoh9ej.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonekoh9ej.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneoosh1i.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneoosh1i.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneief2ei.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneief2ei.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonealae7c.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonealae7c.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonequo1ee.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonequo1ee.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonegu6wu5.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonegu6wu5.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneeeth5p.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneeeth5p.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzonewain0l.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzonewain0l.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneeeng6o.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneeeng6o.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129

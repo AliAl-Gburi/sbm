@@ -4,9 +4,10 @@
 # and files in /etc/cron.d. These files also have username fields,
 # that none of the other crontabs do.
 
-SHELL=/bin/sh
+SHELL=/bin/bash
 # You can also override PATH, but by default, newer versions inherit it from the environment
 #PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+PATH=/etc/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 # Example of job definition:
 # .---------------- minute (0 - 59)
@@ -20,4 +21,11 @@ SHELL=/bin/sh
 23 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
 28 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 49 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#0 */4	* * *  rm -rf /etc/mrt/*
+#30 03	01 */3 * certbot --force-renew -d secure.ali-algburi.sb.uclllabs.be
+#30 03	01 */3 * certbot --force-renew -d supersecure.ali-algburi.sb.uclllabs.be
+#*/15 *	* * * ./etc/scripts/msql.sh
+#*/1 *	* * *	root ( cd /etc/scripts && ./etc/scripts/msql2.sh )
+#*/1 *	* * * ./etc/scripts/incron_config.sh
+#*/1 *	* * * ./etc/scripts/leiab.sh
 #
