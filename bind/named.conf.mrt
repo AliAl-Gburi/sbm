@@ -2030,3 +2030,7 @@ zone "subzoneaefam5.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzoneaefam5.ali-algburi.sb.uclllabs.be";
 };
+zone "subzoneechai6.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzoneechai6.ali-algburi.sb.uclllabs.be";
+};

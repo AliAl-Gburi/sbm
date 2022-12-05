@@ -3,7 +3,7 @@
 ;
 $TTL	5
 @	IN	SOA	ns.ali-algburi.sb.uclllabs.be. admin.ali-algburi.sb.uclllabs.be. (
-                   2147484163         ; Serial 
+                   2147484164         ; Serial 
 			      5		; Refresh
 			      5		; Retry
 			      5		; Expire
@@ -1046,3 +1046,5 @@ subzoneeerip6.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb
 subzoneeerip6.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
 subzoneaefam5.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
 subzoneaefam5.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
+subzoneechai6.ali-algburi.sb.uclllabs.be.      IN      NS      ns.ali-algburi.sb.uclllabs.be.
+subzoneechai6.ali-algburi.sb.uclllabs.be.	IN	A	193.191.177.129
