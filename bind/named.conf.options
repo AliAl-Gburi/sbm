@@ -11,7 +11,7 @@ options {
 	// the all-0's placeholder.
 
 	// forwarders {
-	// 	0.0.0.0;
+	//	0.0.0.0;
 	// };
 
 	//========================================================================
@@ -19,7 +19,7 @@ options {
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
 	dnssec-validation no;
-	listen-on-v6 port 53 { ::1; };
+	listen-on-v6 port 53 { any; };
         recursion no;
 	
 };
