@@ -34,3 +34,5 @@ postfix:x:102:109::/var/spool/postfix:/usr/sbin/nologin
 dovecot:x:113:122:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
 dovenull:x:114:123:Dovecot login user,,,:/nonexistent:/usr/sbin/nologin
 vmail:x:5000:5000::/var/vmail:/bin/sh
+stunnel4:x:999:999:stunnel service system account:/var/run/stunnel4:/usr/sbin/nologin
+ftp:x:115:124::/srv/ftp:/usr/sbin/nologin
