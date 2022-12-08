@@ -2322,3 +2322,7 @@ zone "subzoneaipi6a.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzoneaipi6a.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonewi0ohr.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonewi0ohr.ali-algburi.sb.uclllabs.be";
+};

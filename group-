@@ -64,3 +64,4 @@ dovecot:x:122:
 dovenull:x:123:
 vmail:x:5000:
 stunnel4:x:999:stunnel4
+ftp:x:124:
