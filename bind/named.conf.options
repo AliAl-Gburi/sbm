@@ -20,6 +20,7 @@ options {
 	//========================================================================
 	dnssec-validation no;
 	listen-on-v6 port 53 { any; };
+	listen-on port 53 { any; };
         recursion no;
 	
 };
