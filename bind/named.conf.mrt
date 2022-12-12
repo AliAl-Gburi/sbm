@@ -2326,3 +2326,11 @@ zone "subzonewi0ohr.ali-algburi.sb.uclllabs.be" {
 		type master; 
 		file "/etc/bind/db.subzonewi0ohr.ali-algburi.sb.uclllabs.be";
 };
+zone "subzonevung3o.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonevung3o.ali-algburi.sb.uclllabs.be";
+};
+zone "subzonexoh9fo.ali-algburi.sb.uclllabs.be" {
+		type master; 
+		file "/etc/bind/db.subzonexoh9fo.ali-algburi.sb.uclllabs.be";
+};
