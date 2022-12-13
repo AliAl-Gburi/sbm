@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "$1" = "start" ];
+then
+echo "Starting firewall"
+iptables-restore < /etc/iptables/rules.v4
+ip6tables-restore < /etc/iptables/rules.v6
+
+elif [ "$1" = "stop" ];
+then
+echo "Stopping firewall"
+iptables -F
+ip6tables -F
+
+elif [ "$1" = "restart" ];
+then
+echo "Restarting firewall"
+iptables -F
+ip6tables -F
+
+iptables-restore < /etc/iptables/rules.v4
+ip6tables-restore < /etc/iptables/rules.v6
+
+else
+echo "usage: firewall {start|stop|restart}"
+fi
