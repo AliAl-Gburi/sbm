@@ -1,0 +1,30 @@
+- name: Ansible Playbook setup backup
+  hosts: web
+  become: yes
+  tasks:
+    - name: Install latest version of incron
+      apt: name=incron update_cache=yes state=latest
+
+    - name: Create backup script
+      file:
+        path: "/etc/scripts/backup.sh"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: edit backup script
+      shell: echo '#!/bin/bash\nmkdir -p /var/backups/inotify\nif echo $1 | grep -qP "\..*\.sw(p|x|px)$" ; then\n  exit 0\nfi\ncp -p --parents $1 /var/backups/inotify\nmv /var/backups/inotify$1 /var/backups/inotify$1_$(date +"%Y.%m.%d_%H:%M:%S")' > /etc/scripts/backup.sh
+
+    - name: add incron command to crontab
+      cron:
+        name: add incrond command
+        minute: "*/15"
+        job: "find /etc -type d ! -regex '.*/.git.*' -print0 | xargs -0 -I{} echo '{} IN_CLOSE_WRITE,recursive=false /etc/scripts/backup.sh \\$@/\\$#' > /etc/incron.d/etc.conf; systemctl restart incron"
+
+
+    - name: add remote backup command to crontab
+      cron:
+        name: add remote command
+        minute: "59"
+        job: "rsync -aXv --delete --rsh='ssh -p22345' /etc r0684462@leia.uclllabs.be:/home/LDAP/r0684462/backups"
