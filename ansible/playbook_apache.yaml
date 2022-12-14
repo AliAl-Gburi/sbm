@@ -1,0 +1,239 @@
+- name: Ansible Playbook to Install and Setup Apache on Ubuntu
+  hosts: web
+  become: yes
+  tasks:
+    - name: Install latest version of Apache
+      apt: name=apache2 update_cache=yes state=latest
+
+    - name: Create document root for www host
+      file:
+        path: "/var/www/html"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create index.html
+      file:
+        path: "/var/www/html/index.html"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: add welcome to index
+      shell: echo 'welcome' > /var/www/html/index.html
+
+    - name: set up virtualHost
+      file:
+        path: "/etc/apache2/sites-available/000-default.conf"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: configure www
+      shell: printf '<VirtualHost *:80>\n  ServerAdmin webmaster@localhost\n  DocumentRoot /var/www/html\n  ErrorLog ${APACHE_LOG_DIR}/error.log\n  CustomLog ${APACHE_LOG_DIR}/access.log combined\n  </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
+
+    - name: Enable Site
+      command: a2ensite 000-default
+
+    - name: Create document root for www1 host
+      file:
+        path: "/var/www/www1/html"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create index.html
+      file:
+        path: "/var/www/www1/html/index.html"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: add welcome to index
+      shell: echo 'www1' > /var/www/www1/html/index.html
+
+
+    - name: create .htpasswd
+      file:
+        path: "/var/www/www1/.htpasswd"
+        state: touch
+        owner: root
+        group: root
+
+    - name: add user to .htpasswd
+      shell: echo 'check:{SHA}87UdxBpYuFZtKzn/VntGtVA2ZhE=' > /var/www/www1/.htpasswd
+
+    - name: create private directory
+      file:
+        path: "/var/www/www1/html/private"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create private/index.html
+      file:
+        path: "/var/www/www1/html/private/index.html"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: add hello check to private index
+      shell: echo 'hello check' > /var/www/www1/html/private/index.html
+
+
+    - name: create .htaccess
+      file:
+        path: "/var/www/www1/html/private/.htaccess"
+        state: touch
+        owner: root
+        group: root
+
+    - name: configure .htaccess
+      shell: printf 'AuthType Basic\nAuthName "Private Folder"\nAuthUserFile "/var/www/www1/.htpasswd"\nRequire valid-user' > /var/www/www1/html/private/.htaccess
+
+    - name: set up virtualHost
+      file:
+        path: "/etc/apache2/sites-available/www1.conf"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: configure www1
+      shell: printf '<VirtualHost *:80>\n  ServerAdmin webmaster@localhost\n  ServerName www1.ali-algburi.sb.uclllabs.be\n  ServerAlias www1.ali-algburi.sb.uclllabs.be\n  DocumentRoot /var/www/www1/html\n  ErrorLog ${APACHE_LOG_DIR}/www1_error.log\n  CustomLog ${APACHE_LOG_DIR}/www1_access.log combined\n  </VirtualHost>\n<Directory /var/www/www1/html/private>\n  Options Indexes FollowSymLinks\n  AllowOverride All\n  Require all granted\n</Directory>' > /etc/apache2/sites-available/www1.conf
+
+    - name: Enable Site
+      command: a2ensite www1
+
+    - name: Create document root for www2 host
+      file:
+        path: "/var/www/www2/html"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create index.html
+      file:
+        path: "/var/www/www2/html/index.html"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: add www2 to index
+      shell: echo 'www2' > /var/www/www2/html/index.html
+
+    - name: add toupperphp to www2
+      file:
+        path: "/var/www/www2/html/toupper.php"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: configure toupper
+      shell: printf '<?php\n  $code = $_GET["code"];\n  echo strtoupper($code);\n?>' > /var/www/www2/html/toupper.php
+
+    - name: set up virtualHost
+      file:
+        path: "/etc/apache2/sites-available/www2.conf"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: configure www2
+      shell: printf '<VirtualHost *:80>\n  ServerAdmin webmaster@localhost\n  ServerName www2.ali-algburi.sb.uclllabs.be\n  ServerAlias www2.ali-algburi.sb.uclllabs.be\n  DocumentRoot /var/www/www1/html\n  ErrorLog ${APACHE_LOG_DIR}/www2_error.log\n  CustomLog ${APACHE_LOG_DIR}/www2_access.log combined\n  </VirtualHost>'
+
+    - name: Enable Site
+      command: a2ensite www2
+
+    - name: Create document root for secure host
+      file:
+        path: "/var/www/secure/html"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create index.html
+      file:
+        path: "/var/www/secure/html/index.html"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: add welcome to index
+      shell: echo 'secure1' > /var/www/secure/html/index.html
+
+    - name: create .htaccess
+      file:
+        path: "/var/www/secure/html/.htaccess"
+        state: touch
+        owner: root
+        group: root
+
+    - name: add rewriteengine to .htaccess
+      shell: echo 'RewriteEngine On' > /var/www/secure/html/.htaccess
+
+    - name: set up secure virtualHost
+      file:
+        path: "/etc/apache2/sites-available/unsecure-ssl.conf"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: configure secure vh
+      shell: echo '<VirtualHost *:443>\n  ServerAdmin webmaster@localhost\n  SSLEngine on\n  ServerName secure.ali-algburi.sb.uclllabs.be\n  ServerAlias secure.ali-algburi.sb.uclllabs.be\n  RewriteEngine On\n  RewriteCond %{HTTPS} !=on\n    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]\n  DocumentRoot /var/www/secure/html\n  <Directory /var/www/secure/html>\n  Options Indexes FollowSymlinks\n  AllowOverride All\n  Require all granted\n  </Directory>\n  ErrorLog ${APACHE_LOG_DIR}/secure_error.log\n  CustomLog ${APACHE_LOG_DIR}/secure_access.log combined\n  Include /etc/letsencrypt/options-ssl-apache.conf\n  SSLCertificateFile /etc/letsencrypt/live/secure.ali-algburi.sb.uclllabs.be/fullchain.pem\n  SSLCertificateKeyFile /etc/letsencrypt/live/secure.ali-algburi.sb.uclllabs.be/privkey.pem\n</VirtualHost>\n\n<VirtualHost *:80>\n  ServerAdmin webmaster@localhost\n  ServerName secure.ali-algburi.sb.uclllabs.be\n  ServerAlias secure.ali-algburi.sb.uclllabs.be\n DocumentRoot /var/www/secure/html\n  RewriteEngine On\n  RewriteCond %{HTTPS} !=on\n  RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]\n  <Directory /var/www/secure/html>\n  Options Indexes FollowSymlinks\n  AllowOverride All\n  Require all granted\n  </Directory>\n  ErrorLog ${APACHE_LOG_DIR}/secure_error.log\n  CustomLog ${APACHE_LOG_DIR}/secure_access.log combined\n  RewriteCond %{SERVER_NAME} =secure.ali-algburi.sb.uclllabs.be\n  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n</VirtualHost>' > /etc/apache2/sites-available/unsecure-ssl.conf
+
+    - name: Enable Site
+      command: a2ensite unsecure-ssl
+
+    - name: Create document root for supersecure host
+      file:
+        path: "/var/www/supersecure/html"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create index.html
+      file:
+        path: "/var/www/supersecure/html/index.html"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: add supersecure to index
+      shell: echo 'supersecure' > /var/www/supersecure/html/index.html
+
+    - name: set up supersecure virtualHost
+      file:
+        path: "/etc/apache2/sites-available/supersecure.conf"
+        state: touch
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: configure supersecure vh
+      shell: echo '<VirtualHost *:443>\n  ServerAdmin webmaster@localhost\n  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"\n  SSLEngine on\n  ServerName supersecure.ali-algburi.sb.uclllabs.be\n  ServerAlias supersecure.ali-algburi.sb.uclllabs.be\n  RewriteEngine On\n  RewriteCond %{HTTPS} !=on\n    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]\n  DocumentRoot /var/www/supersecure/html\n  <Directory /var/www/supersecure/html>\n  Options Indexes FollowSymlinks\n  AllowOverride All\n  Require all granted\n  </Directory>\n  ErrorLog ${APACHE_LOG_DIR}/supersecure_error.log\n  CustomLog ${APACHE_LOG_DIR}/supersecure_access.log combined\n  Include /etc/letsencrypt/options-ssl-apache.conf\n  SSLCertificateFile /etc/letsencrypt/live/supersecure.ali-algburi.sb.uclllabs.be/fullchain.pem\n  SSLCertificateKeyFile /etc/letsencrypt/live/supersecure.ali-algburi.sb.uclllabs.be/privkey.pem\n</VirtualHost>\n\n<VirtualHost *:80>\n  ServerAdmin webmaster@localhost\n  ServerName supersecure.ali-algburi.sb.uclllabs.be\n  ServerAlias supersecure.ali-algburi.sb.uclllabs.be\n  RewriteEngine On\n  RewriteCond %{HTTPS} !=on\n  RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]\n DocumentRoot /var/www/supersecure/html\n  <Directory /var/www/supersecure/html>\n  Options Indexes FollowSymlinks\n  AllowOverride All\n  Require all granted\n  </Directory>\n  ErrorLog ${APACHE_LOG_DIR}/supersecure_error.log\n  CustomLog ${APACHE_LOG_DIR}/supersecure_access.log combined\n  RewriteCond %{SERVER_NAME} =supersecure.ali-algburi.sb.uclllabs.be\n  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n</VirtualHost>' > /etc/apache2/sites-available/supersecure.conf
+
+    - name: Enable Site
+      command: a2ensite supersecure
+
+  handlers:
+    - name: restart-apache
+      service:
+        name: apache2
+        state: restarted

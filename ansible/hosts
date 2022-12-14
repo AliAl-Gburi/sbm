@@ -43,4 +43,8 @@
 ## db-[99:101]-node.example.com
 
 [web]
-leia ansible_host=193.191.177.1
+ali-algburi
+
+[web:vars]
+http_port=80
+https_port=443
