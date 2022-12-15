@@ -1,5 +1,12 @@
 #!/bin/bash
-
+### BEGIN INIT INFO
+# Provides:          firewall
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: your description here
+### END INIT INFO
 if [ "$1" = "start" ];
 then
 echo "Starting firewall"
@@ -9,14 +16,15 @@ ip6tables-restore < /etc/iptables/rules.v6
 elif [ "$1" = "stop" ];
 then
 echo "Stopping firewall"
-iptables -F
-ip6tables -F
+iptables-restore < /etc/iptables/stopper.v4
+ip6tables-restore < /etc/iptables/stopper.v6
 
 elif [ "$1" = "restart" ];
 then
 echo "Restarting firewall"
-iptables -F
-ip6tables -F
+
+iptables-restore < /etc/iptables/stopper.v4
+ip6tables-restore < /etc/iptables/stopper.v6
 
 iptables-restore < /etc/iptables/rules.v4
 ip6tables-restore < /etc/iptables/rules.v6
@@ -24,3 +32,4 @@ ip6tables-restore < /etc/iptables/rules.v6
 else
 echo "usage: firewall {start|stop|restart}"
 fi
+

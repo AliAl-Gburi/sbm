@@ -1,0 +1,15 @@
+[Unit]
+Description=Firewall service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/etc/init.d/firewall start
+ExecStop=/etc/init.d/firewall stop
+
+[Install]
+
+WantedBy=multi-user.target
+
+
